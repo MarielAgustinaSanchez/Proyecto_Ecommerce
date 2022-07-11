@@ -7,7 +7,7 @@ function App() {
   <div className='App'>
     <div className="Container">
      <NavBar/>
-      <ItemListContainer greeting= "Bienvenidxs" />
+      <ItemListContainer greeting= "Bienvenidxs"/>
       </div>
    </div>
     </>
