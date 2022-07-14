@@ -6,19 +6,19 @@ function ItemCount () {
     let max = 11;
 
 
-const [stock, setAdd] = useState (1);
+const [stock, setStock] = useState (1);
 
 function sumar () {
     const producto = stock + 1;
     if (producto < max) {
-        setAdd (producto)
+        setStock (producto)
     }
 }
 
 function restar (){
     const producto = stock - 1;
     if (producto > min){
-        setAdd(producto);
+        setStock(producto);
     }
 }
 
