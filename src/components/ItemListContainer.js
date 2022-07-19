@@ -2,6 +2,13 @@ import React, { useEffect, useState } from "react";
 import {productos} from "./mock/productos"
 import {ItemList} from "./ItemList";
 
+const styles = {
+  title: {
+    display:'flex',
+    justifyContent: 'center',
+  }
+
+}
 export function ItemListContainer (props) {
    const [items, setItems] = useState([])
    useEffect(() =>{
@@ -16,9 +23,11 @@ export function ItemListContainer (props) {
    }, []);
     
    return(
-    <div className="Inicio">
-      <h1> {props.greeting} </h1> 
+    <div>
+      <h1 style={styles.titulo}> {props.greeting} </h1> 
       <ItemList items={items}/>
     </div>
    )
 }
+
+export default ItemListContainer;

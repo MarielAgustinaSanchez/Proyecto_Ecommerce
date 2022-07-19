@@ -1,0 +1,15 @@
+.counter{
+    display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+    width: 300px;
+}
+
+.boton-counter{
+    width: 50px;
+    height: 17px;
+}
+
+.agregar{
+    width: 95%;
+  }
