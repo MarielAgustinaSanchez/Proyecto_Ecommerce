@@ -15,12 +15,12 @@ const ItemDetail = ({item}) => {
       <div className="text-container">
         <div className="titulo-container">
             <h1>{item.title}</h1>
-            <h3 style={{color: "whitesmoke"}}>${item.price}</h3>
+            <h3 style={{color: "black"}}>${item.price}</h3>
         </div>
         <p>
           {item.description}
         </p>
-        <ItemCount stock={item.stock} producto={item.price} onAdd={onAdd}/>
+        <ItemCount stock={item.stock} precio={item.price} onAdd={onAdd}/>
       </div>
     </div>
     </>

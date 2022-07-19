@@ -15,17 +15,17 @@ const ItemCount = ({ stock, initial = 1, precio, onAdd }) => {
   return (
     <>
     <div className="counter">
-      <button onClick={resta} className="boton-counter">
+      <button style={{color:"black"}} onClick={resta} className="boton-counter">
         -
       </button>
       <h4 className="Count">
         {count}
       </h4>
-      <button onClick={suma} className="boton-counter">
+      <button style={{color:"black"}} onClick={suma} className="boton-counter">
         +
       </button>
     </div>
-    <span style={{color:"whitesmoke", fontSize:"1.2em"}}><b>Total: ${count * precio}</b></span>
+    <span style={{color:"black", fontSize:"1.2em"}}><b>Total: ${count * precio}</b></span>
     <button className="agregar" onClick={()=>onAdd(count)}>AGREGAR AL CARRITO</button>
     </>
   );

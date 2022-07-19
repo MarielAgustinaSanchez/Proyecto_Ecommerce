@@ -11,7 +11,7 @@ export const ItemDetailContainer = () => {
   const traerItemPorId = () => {
     return new Promise((resolve)=>{
       setTimeout(()=>{
-        resolve(productos.find(obj => obj.id === id));
+        resolve(productos.find(obj => obj.id == 3));
       }, 1000)
     });
   };

@@ -24,7 +24,7 @@ export function ItemListContainer (props) {
     
    return(
     <div>
-      <h1 style={styles.titulo}> {props.greeting} </h1> 
+      <h1 style={styles.title}> {props.greeting} </h1> 
       <ItemList items={items}/>
     </div>
    )
