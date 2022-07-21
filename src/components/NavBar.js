@@ -10,7 +10,7 @@ export const NavBar = () => {
     <>
   <Navbar bg="light" expand="lg"> 
   <Container>
-    <Navbar.Brand href="#home">
+    <Navbar.Brand href="/">
       <img
         src="/logoPrincipal.png"
         width="150"
@@ -22,11 +22,11 @@ export const NavBar = () => {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
-        <Nav.Link href="#home">INICIO</Nav.Link>
+        <Nav.Link href="/" className='Link'>INICIO</Nav.Link>
         <NavDropdown title="MARCAS" id="basic-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">MOTOROLA</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">SAMSUNG</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">IPHONE</NavDropdown.Item>
+          <Nav.Link  href="/categorias/Motorola" className="link">MOTOROLA</Nav.Link>
+          <Nav.Link  href="/categorias/Samsung" className="link">SAMSUNG</Nav.Link>
+          <Nav.Link  href="/categorias/Iphone" className="link">IPHONE</Nav.Link>
         </NavDropdown>
       </Nav>
       <CartWigget/>

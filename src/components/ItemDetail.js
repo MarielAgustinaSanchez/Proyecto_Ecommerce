@@ -2,6 +2,7 @@ import "./ItemDetail.css";
 import ItemCount from "./ItemCount";
 
 const ItemDetail = ({item}) => {
+  const {title, price, imgDetalle, stock, description, extra} = item
   const onAdd = (cantidad) => {
     console.log("seleccionaste ", cantidad, " items")
   };
@@ -10,17 +11,18 @@ const ItemDetail = ({item}) => {
     <>
     <div className="itemDetail">
       <div className="img-detail-cont">
-        <img src={item.imgDetalle} alt={item.title} className="img-detail" />
+        <img src={imgDetalle} alt={title} className="img-detail" />
       </div>
       <div className="text-container">
         <div className="titulo-container">
-            <h1>{item.title}</h1>
-            <h3 style={{color: "black"}}>${item.price}</h3>
+            <h1>{title}</h1>
+            {extra && <span>{extra}</span>}
+            <h3 style={{color: "black"}}>${price}</h3>
         </div>
         <p>
-          {item.description}
+          {description}
         </p>
-        <ItemCount stock={item.stock} precio={item.price} onAdd={onAdd}/>
+        <ItemCount stock={stock} precio={price} onAdd={onAdd}/>
       </div>
     </div>
     </>

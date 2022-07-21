@@ -1,33 +1,37 @@
 import React, { useEffect, useState } from "react";
 import {productos} from "./mock/productos"
 import {ItemList} from "./ItemList";
+import { useParams } from "react-router-dom";
+import Loader from "./Loader";
 
-const styles = {
-  title: {
-    display:'flex',
-    justifyContent: 'center',
-  }
 
-}
-export function ItemListContainer (props) {
+export const ItemListContainer = () => {
    const [items, setItems] = useState([])
-   useEffect(() =>{
-     const traerProductos = new Promise ((res, rej) => {
-       setTimeout (() =>{
-        res(productos);
-       }, 2000)
-     });
-     traerProductos.then ((data) =>{
-         setItems (data);
-     });
-   }, []);
+   const [cargando, setCargando] = useState (true)
+   const {categoria} = useParams()
+
+   
+   const traerItems = () => {
+      return new Promise((resolve)=>{
+         setCargando(true)
+         setTimeout(()=>{
+         resolve(categoria ? productos.filter(obj => obj.categoria === categoria) : productos)
+        }, 500)
+      }) 
+    }
+  
+    useEffect(()=>{
+      traerItems().then(res =>{
+        setItems(res)
+        setCargando(false)
+      });
+    },[categoria])
+
+
     
    return(
-    <div>
-      <h1 style={styles.title}> {props.greeting} </h1> 
-      <ItemList items={items}/>
-    </div>
+      <>
+      {cargando ? <Loader/> : <ItemList items={items}/>}
+      </>
    )
 }
-
-export default ItemListContainer;

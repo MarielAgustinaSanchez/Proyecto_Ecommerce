@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const styles = {
     container: {
@@ -33,7 +34,7 @@ export const Item = ({item}) => {
             <div>
               <h3>{item.title}</h3>
               <span>{item.description} </span>
-              <button>DETALLE</button>
+             <Link to={`/Item/${item.id}`}> <button>DETALLE</button></Link>
            </div>
           </div>
         </div> 
