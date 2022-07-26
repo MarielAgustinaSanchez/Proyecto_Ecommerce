@@ -6,6 +6,8 @@ const styles = {
      display: 'flex',
      flexDirection: 'row',
      justifyContent : 'center',
+     paddingTop: '20px',
+
     },
 
     Items: {
@@ -18,23 +20,51 @@ const styles = {
         fontSize: '1.2 rem', 
         margin: '10px',
     },
+
     Image:{
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         borderRadius: '15 px 15px 0 0',
     },
+
+    box: {
+        display: 'flex',
+        flexDirection: 'column',
+    },
+
+    title:{
+        display:'flex',
+        justifyContent: 'center',
+    },
+
+    text:{
+        display:'flex',
+        justifyContent: 'center',
+    },
+
+    Button:{
+        backgroundColor: 'Black',
+        color:'white',
+        margin: '10px',
+    },
+
+    link:{
+        display: 'flex',
+        justifyContent: 'center',
+        textDecoration: 'none',  
+    }
 }
 
 export const Item = ({item}) => {
     return(
         <div style={styles.container}>
           <div style={styles.Items}>
-             <img style={styles.Image} src={item.img} />
-            <div>
-              <h3>{item.title}</h3>
-              <span>{item.description} </span>
-             <Link to={`/Item/${item.id}`}> <button>DETALLE</button></Link>
+             <img style={styles.Image} src={item.img}/>
+            <div style={styles.box} >
+              <h3 style={styles.title}>{item.title}</h3>
+              <p style={styles.text}>{item.description} </p>
+             <Link to={`/Item/${item.id}`} style={styles.link}> <button style={styles.Button}>DETALLE</button></Link>
            </div>
           </div>
         </div> 

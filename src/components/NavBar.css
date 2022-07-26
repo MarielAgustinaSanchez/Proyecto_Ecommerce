@@ -1,0 +1,19 @@
+.link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    margin: 10px;
+    color: black;
+}
+.nav{
+    display: flex;
+}
+.navegacion{
+    display: flex;
+}
+
+.me-auto{
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
