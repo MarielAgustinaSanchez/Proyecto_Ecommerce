@@ -5,7 +5,6 @@ import {productos} from "./mock/productos"
 
 export const ItemDetailContainer = () => {
   const [item, setItem] = useState({});
-  console.log(useState())
   const {id} = useParams();
 
   const traerItemPorId = () => {
