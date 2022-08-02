@@ -39,7 +39,7 @@ export const productos = [
     imgDetalle: '/img/iphone12.jpg',
     title: 'Iphone 12',
     categoria:'Iphone',
-    price:2000,
+    price:3000,
     stock:10,
     description: 
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",    
@@ -50,7 +50,7 @@ export const productos = [
     imgDetalle: '/img/motoE20.jpg',
     title: 'Motorola E20',
     categoria: 'Motorola',
-    price:1000,
+    price:1800,
     stock:10,
     description: 
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",   
@@ -72,7 +72,7 @@ export const productos = [
       imgDetalle: '/img/iphone13.jpg',
       title: 'Iphone 13',
       categoria:'Iphone',
-      price:2000,
+      price:3500,
       stock:10,
       description: 
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",    
@@ -83,7 +83,7 @@ export const productos = [
       imgDetalle: '/img/motoE40.jpg',
       title: 'Motorola E40',
       categoria: 'Motorola',
-      price:1000,
+      price:2100,
       stock:10,
       description: 
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",   
@@ -94,7 +94,7 @@ export const productos = [
       imgDetalle: '/img/samsungA72.png',
       title: 'Samsung A72',
       categoria: 'Samsung',
-      price:1500,
+      price:2800,
       stock:10,
       description: 
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",   
@@ -105,7 +105,7 @@ export const productos = [
         imgDetalle: '/img/iphoneXr.jpg',
         title: 'Iphone XR',
         categoria:'Iphone',
-        price:2000,
+        price:3200,
         stock:10,
         description: 
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",    
@@ -116,7 +116,7 @@ export const productos = [
         imgDetalle: '/img/motoG9.jpg',
         title: 'Motorola G9',
         categoria: 'Motorola',
-        price:1000,
+        price:2700,
         stock:10,
         description: 
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",   
@@ -127,7 +127,7 @@ export const productos = [
         imgDetalle: '/img/samsungA51.jpg',
         title: 'Samsung A51',
         categoria: 'Samsung',
-        price:1500,
+        price:2600,
         stock:10,
         description: 
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",   
@@ -138,7 +138,7 @@ export const productos = [
           imgDetalle: '/img/iphoneXs.jpg',
           title: 'Iphone XS',
           categoria:'Iphone',
-          price:2000,
+          price:3200,
           stock:10,
           description: 
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",    
@@ -160,7 +160,7 @@ export const productos = [
           imgDetalle: '/img/samsungS21.jpg',
           title: 'Samsung S21',
           categoria: 'Samsung',
-          price:1500,
+          price:1700,
           stock:10,
           description: 
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",   

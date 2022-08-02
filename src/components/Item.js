@@ -38,11 +38,6 @@ const styles = {
         justifyContent: 'center',
     },
 
-    text:{
-        display:'flex',
-        justifyContent: 'center',
-    },
-
     Button:{
         backgroundColor: 'Black',
         color:'white',
@@ -63,7 +58,6 @@ export const Item = ({item}) => {
              <img style={styles.Image} src={item.img}/>
             <div style={styles.box} >
               <h3 style={styles.title}>{item.title}</h3>
-              <p style={styles.text}>{item.description} </p>
              <Link to={`/Item/${item.id}`} style={styles.link}> <button style={styles.Button}>DETALLE</button></Link>
            </div>
           </div>

@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const CartWigget = () => {
     return (
         <>
-        <div>
+        <Link to='./cart'>
         <img src="/Carrito.png" alt="Carrito"/>
-        </div>
+        </Link>
         </>
     )
 }

@@ -2,7 +2,7 @@ import "./ItemDetail.css";
 import ItemCount from "./ItemCount";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { cartContext } from "./CartContext";
+import { cartContext } from '../../src/context/CartContext'
 
 const ItemDetail = ({item}) => {
   const {title, price, imgDetalle, stock, description, extra} = item
@@ -33,8 +33,9 @@ const ItemDetail = ({item}) => {
         { cantidad === 0 ? (
         <ItemCount stock={stock} precio={price} onAdd={onAdd}/>
          ) : (
-          <Link to="./cart"> <button>Terminar mi compra</button></Link>
+          <Link to="/cart"> <button>Terminar mi compra</button></Link>
           )}
+          <Link to="/"><button>Seguir comprando</button></Link>
       </div>
     </div>
     </>
