@@ -1,37 +1,47 @@
 import React, { useEffect, useState } from "react";
-import {productos} from "./mock/productos"
+//import {productos} from "./mock/productos"
 import {ItemList} from "./ItemList";
 import { useParams } from "react-router-dom";
 import Loader from "./Loader";
+import { getFirestore,
+collection,
+getDocs,
+query,
+where
+ } from "firebase/firestore";
 
+ export const ItemListContainer = () => {
+  const [data, setData] = useState([]);
+  const { categoria } = useParams();
 
-export const ItemListContainer = () => {
-   const [items, setItems] = useState([])
-   const [cargando, setCargando] = useState (true)
-   const {categoria} = useParams()
+  useEffect(() => {
+    const querydb = getFirestore();
+    const queryCollection = collection(querydb, "items");
+    if (categoria) {
+      const queryFilter = query(
+        queryCollection,
+        where("categoria", "==", categoria)
+      );
 
-   
-   const traerItems = () => {
-      return new Promise((resolve)=>{
-         setCargando(true)
-         setTimeout(()=>{
-         resolve(categoria ? productos.filter(obj => obj.categoria === categoria) : productos)
-        }, 500)
-      }) 
+      getDocs(queryFilter).then(res =>
+        setData(res.docs.map(items => ({ id: items.id, ...items.data() })))
+      );
+    } else {
+      getDocs(queryCollection).then(res =>
+        setData(res.docs.map(items=> ({ id: items.id, ...items.data() })))
+      );
     }
-  
-    useEffect(()=>{
-      traerItems().then(res =>{
-        setItems(res)
-        setCargando(false)
-      });
-    },[categoria])
+  }, [categoria]);
 
 
-    
    return(
-      <>
-      {cargando ? <Loader/> : <ItemList items={items}/>}
-      </>
-   )
-}
+      <div>
+        <div className="cards">
+          <ItemList items={data} />
+        </div>
+  
+    </div>
+  );
+};
+
+export default ItemListContainer;
