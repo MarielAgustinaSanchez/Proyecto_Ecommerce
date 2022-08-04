@@ -9,33 +9,26 @@ const Provider = (props) =>{
 
     const totalCart = () => {
         let  suma = 0
-        cart.forEach(item => suma += (item.price * item.cantidad));
-        setSuma(suma)
-    }
+        cart.forEach(item => (suma += item.price * item.cantidad));
+        setSuma(suma);
+    };
 
 
-    useEffect(() =>{
+    useEffect(() => {
         console.log(cart);
-        totalCart()
+        totalCart();
     }, [cart] );
     const addToCart = (item, cantidad) => {
         if (isInCart(item.id)) {
-            cart.map(product => {
-                if(product.id === item.id){
-                    product.cantidad = cantidad
-                    console.log('cart', cart)
-                    setCart(cart)
-                }
-            })
-            
-        } else {
-            setCart([...cart, {...item, cantidad}]);
-        }
-    };
+            alert("ya esta en el carrito");
+          } else {
+            setCart([...cart, { ...item, cantidad }]);
+          }
+        };
      
     const isInCart = (id) => {
         return cart.some((item) => item.id === id);
-    }
+    };
 
     const deleteOne = (id) => {
         const productosFiltrados = cart.filter((prod) => prod.id !== id);
