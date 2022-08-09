@@ -6,9 +6,10 @@
     text-align: center;
 }
 .formulario{
-    background-color: #000000;
+    background-color: #d1d1d1;
     width: 50%;
     margin: 0 auto;
+    margin-bottom: 50px;
     padding: 1em;
     border: none;
     border-radius: 2px;
@@ -23,15 +24,15 @@
     margin-bottom: 1em;
     padding: 0.5em;
     border:none;
-    border-radius: 2px;
 }
 
 
 .formulario-label{
     font-size: 1.2em;
     font-weight: bold;
-    color: whitesmoke;
+    color: rgb(0, 0, 0);
     margin-bottom: 1em;
+   
 }
 .btn-form{
    background-color: #000000;

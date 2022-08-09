@@ -6,9 +6,8 @@ import { addDoc, getFirestore, collection } from "firebase/firestore";
 import Swal from "sweetalert2";
 
 const Form = () => {
-  const { cart, deleteAll, totalPrecio, totalProductos } =
-    useContext(cartContext);
-  const [form, setForm] = useState({
+  const { cart, deleteAll, totalPrecio, totalProductos } = useContext(cartContext);
+  const [form, setform] = useState({
     nombre: "",
     email: "",
     phone: "",
@@ -23,7 +22,7 @@ const Form = () => {
     },
     items: cart.map((item) => ({
       id: item.id,
-      title: item.nombre,
+      title: item.title,
       precio: item.price,
       stock: item.stock,
     })),
@@ -44,22 +43,22 @@ const Form = () => {
   };
 
   const handleChange = (e) => {
-    setForm({
+    setform({
       ...form,
       [e.target.name || ""]: e.target.value,
     });
   };
    const modalBasico = (id) => {
     Swal.fire({
-      title: "Gracias por su compra",
-      text: `Nº Orden: (${id})`,
+      title: "Gracias por su compra!",
+      text: `Su orden: (${id})`,
       icon: "success",
       confirmButtonText: "OK",
     }); 
   };
   return (
     <>
-      <h1 className="titulo-formulario">Generar orden de Compra</h1>
+      <h1 className="titulo-formulario">Terminar compra</h1>
       <form className="formulario">
         <label className="formulario-label" htmlFor="name">
           Nombre y Apellido
@@ -112,14 +111,10 @@ const Form = () => {
           placeholder="direccion de su domicilio"
           required={true}
           value={form.address}
-          onChange={handleChange}
-        />
-        <h5>
-          Nos pondremos en contacto para finalizar las verificaciones y el pago.
-        </h5>
-        <h5> Muchas Gracias</h5>
+          onChange={handleChange}/>
+          <p>Presione "COMPRAR" para generar su orden</p>
         <button className="btn-form" type="submit" onClick={handleSubmit}>
-          <Link to="/">Generar orden</Link>
+          <Link to="/">Comprar</Link>
         </button>
       </form>
     </>
