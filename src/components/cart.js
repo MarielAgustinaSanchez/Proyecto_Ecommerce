@@ -57,6 +57,7 @@ const {cart, deleteAll, deleteOne, suma} = useContext(cartContext)
               </div>
               <div className='col-3'>
             <h3>Total: $ {suma}</h3>
+            <Link to="/checkout">Confirmar compra</Link>
               </div>
             </div>
         </div>

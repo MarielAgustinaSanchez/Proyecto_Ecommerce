@@ -4,13 +4,14 @@ import { cartContext } from "../context/CartContext";
 import { useContext } from "react";
 
 export const CartWigget = () => {
-    const { cart } = useContext(cartContext);
+    const {cartLenght} = useContext(cartContext)
     return (
         <div>
             <Link to='./cart'>
             <img src="/Carrito.png" alt="Carrito"/>
+            
             </Link>
-            <p>{cart.length}</p>
+            <p>{cartLenght()}</p>
         </div>
     );
 };
