@@ -12,7 +12,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     paddingLeft: '16px',
-  } 
+  }, 
 }
 const Cart = () => {
 
@@ -29,22 +29,23 @@ const {cart, deleteAll, deleteOne, suma} = useContext(cartContext)
     }
 
   return (
-    <div>
+    <div> 
+            <div className='text-center'>
+              <h2>Productos Seleccionados</h2>
+            </div>
             {cart.map((prod) => (
                 <div key={prod.id} className="m-5 d-flex row text-center" >
                   <div className='col-2'>
                         <img src={prod.img} width="120px" height="120px" alt={prod.title} />
                   </div>
                     <div className='col-3'>
-                        <h3>{prod.title}</h3>
-                        <br />
-                        <p>{prod.description}</p>
+                        <h4>{prod.title}</h4>
                     </div> 
                     <div className='col-3'>
-                        <h3>Cantidad: {prod.cantidad}</h3>
+                        <h4>Cantidad: {prod.cantidad}</h4>
                     </div>
                     <div className='col-2'>
-                        <h3>Precio $ {prod.price}</h3>
+                        <h4>Precio $ {prod.price}</h4>
                     </div>
                     <div className='col-2'>
                         <button onClick={() => deleteOne(prod.id)}>Eliminar</button>
@@ -55,9 +56,9 @@ const {cart, deleteAll, deleteOne, suma} = useContext(cartContext)
               <div className='col-3'>
             <button onClick={deleteAll}>Eliminar todos los productos</button>
               </div>
-              <div className='col-3'>
-            <h3>Total: $ {suma}</h3>
-            <Link to="/checkout">Confirmar compra</Link>
+            <div className='col-3'>
+              <h3>Total: $ {suma}</h3>
+             <Link to="/checkout"><button >Confirmar compra </button></Link>
               </div>
             </div>
         </div>

@@ -20,7 +20,6 @@ const Provider = (props) =>{
     }, [cart] );
     const addToCart = (item, cantidad) => {
         if (isInCart(item.id)) {
-            alert("ya esta en el carrito");
           } else {
             setCart([...cart, { ...item, cantidad }]);
           }

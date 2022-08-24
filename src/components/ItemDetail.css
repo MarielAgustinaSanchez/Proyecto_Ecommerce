@@ -36,3 +36,11 @@
     display: flex;
     flex-direction: column;
   }
+.agregar{
+  margin-top: 16px;
+}
+  .button{
+    margin: 16px;
+  }
+
+ 

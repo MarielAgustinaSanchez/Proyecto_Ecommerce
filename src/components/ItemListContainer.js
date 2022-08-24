@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-//import {productos} from "./mock/productos"
 import {ItemList} from "./ItemList";
 import { useParams } from "react-router-dom";
 import Loader from "./Loader";
@@ -12,9 +11,11 @@ where
 
  export const ItemListContainer = () => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { categoria } = useParams();
 
   useEffect(() => {
+    setLoading(true);
     const querydb = getFirestore();
     const queryCollection = collection(querydb, "items");
     if (categoria) {
@@ -29,18 +30,14 @@ where
     } else {
       getDocs(queryCollection).then(res =>
         setData(res.docs.map(items=> ({ id: items.id, ...items.data() })))
-      );
-    }
+         );} setLoading(false);
   }, [categoria]);
 
 
    return(
-      <div>
         <div className="cards">
-          <ItemList items={data} />
+        {loading ? <Loader /> : <ItemList items={data} />}
         </div>
-  
-    </div>
   );
 };
 
